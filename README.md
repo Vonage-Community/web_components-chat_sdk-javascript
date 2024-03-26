@@ -1,2 +1,2 @@
-# web_components-conversation_api-javascript
+# Vonage Conversation Web Components
 Web Components to be used with Vonage Conversation API
