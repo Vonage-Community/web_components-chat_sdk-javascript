@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+    /* vc-typing-indicator {
+      font-style: italic;
+    } */
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@vonage/client-sdk@latest/dist/vonageClientSDK.min.js"></script>
+
+</head>
+<body>
+  <vc-typing-indicator></vc-typing-indicator>
+
+  <script type="module">
+    import '../vc-typing-indicator.js';
+    const JWT = '';
+    const CONVERSATION_ID = '';
+    const typingIndicatorEl = document.querySelector('vc-typing-indicator');
+    const client = new vonageClientSDK.VonageClient();
+    try {
+      await client.createSession(JWT);
+      typingIndicatorEl.client = client;
+      typingIndicatorEl.conversationId = CONVERSATION_ID;
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  </script>
+</body>
+</html>

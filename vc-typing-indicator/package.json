@@ -1,0 +1,43 @@
+{
+  "name": "@vonage/vc-typing-indicator",
+  "description": "vc-typing-indicator Web Component to be used with the Vonage Client JS SDK following open-wc recommendations",
+  "license": "MIT",
+  "author": "Vonage",
+  "version": "2.0.0",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./vc-typing-indicator.js": "./vc-typing-indicator.js"
+  },
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@web/dev-server": "^0.1.34"
+  },
+  "customElements": "custom-elements.json",
+  "dependencies": {
+    "lit": "^3.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vonage-Community/web_components-chat_sdk-javascript.git"
+  },
+  "keywords": [
+    "web",
+    "component",
+    "client",
+    "sdk",
+    "chat",
+    "ui",
+    "vonage"
+  ],
+  "bugs": {
+    "url": "https://github.com/Vonage-Community/web_components-chat_sdk-javascript/issues"
+  },
+  "homepage": "https://github.com/Vonage-Community/web_components-chat_sdk-javascript#readme"
+}

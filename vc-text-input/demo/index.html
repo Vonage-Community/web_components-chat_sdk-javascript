@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+
+    /* vc-text-input {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    vc-text-input::part(button) {
+      color: white;
+      padding: 5px 15px;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #871fff;
+      font-size: 1.4rem;
+    }
+
+    vc-text-input::part(input) {
+      color: black;
+      padding: 5px 15px;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1.4rem;
+    } */
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@vonage/client-sdk@latest/dist/vonageClientSDK.min.js"></script>
+
+</head>
+<body>
+  <vc-text-input></vc-text-input>
+
+  <script type="module">
+    import '../vc-text-input.js';
+    const JWT = '';
+    const CONVERSATION_ID = '';
+    const textInputEl = document.querySelector('vc-text-input');
+    const client = new vonageClientSDK.VonageClient();
+    try {
+      await client.createSession(JWT);
+      textInputEl.client = client;
+      textInputEl.conversationId = CONVERSATION_ID;
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  </script>
+</body>
+</html>

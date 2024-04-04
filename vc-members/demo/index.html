@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+    /* vc-members {
+      height: 300px;
+      --vc-members-nth-child-odd-color: #f9f9f9;
+      --vc-members-nth-child-even-color: #fcfcfc;
+
+    }
+    vc-members::part(ul){
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      overflow: auto;
+      list-style: none;
+    }
+    vc-members::part(li){
+      padding: 10px;
+    } */
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@vonage/client-sdk@latest/dist/vonageClientSDK.min.js"></script>
+
+</head>
+<body>
+  <vc-members></vc-members>
+
+  <script type="module">
+    import '../vc-members.js';
+    const JWT = '';
+    const CONVERSATION_ID = '';
+    const membersEl = document.querySelector('vc-members');
+    const client = new vonageClientSDK.VonageClient();
+    try {
+      await client.createSession(JWT);
+      membersEl.client = client;
+      membersEl.conversationId = CONVERSATION_ID;
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  </script>
+</body>
+</html>

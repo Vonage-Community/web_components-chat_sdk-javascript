@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcMessages",
+          "declaration": {
+            "name": "VcMessages",
+            "module": "./src/VcMessages.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "vc-messages.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vc-messages",
+          "declaration": {
+            "name": "VcMessages",
+            "module": "/src/VcMessages.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/VcMessages.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VcMessages",
+          "members": [
+            {
+              "kind": "method",
+              "name": "isFeedAtBottom"
+            },
+            {
+              "kind": "method",
+              "name": "scrollFeedToBottom"
+            },
+            {
+              "kind": "method",
+              "name": "__handleConversationEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "client",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "privacy": "public",
+              "attribute": "client"
+            },
+            {
+              "kind": "field",
+              "name": "conversationId",
+              "default": "undefined",
+              "privacy": "public",
+              "attribute": "conversationId"
+            },
+            {
+              "kind": "field",
+              "name": "messages",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "messages"
+            },
+            {
+              "kind": "field",
+              "name": "loadPreviousMessages",
+              "default": "undefined",
+              "privacy": "public",
+              "attribute": "loadPreviousMessages"
+            },
+            {
+              "kind": "field",
+              "name": "filter",
+              "type": {
+                "text": "array"
+              },
+              "default": "['message','member:joined','member:left','member:invited']",
+              "privacy": "public",
+              "attribute": "filter"
+            },
+            {
+              "kind": "field",
+              "name": "myId",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "messageFeed",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}"
+            },
+            {
+              "kind": "field",
+              "name": "feedAtBottom",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "client",
+              "fieldName": "client"
+            },
+            {
+              "name": "conversationId",
+              "fieldName": "conversationId"
+            },
+            {
+              "name": "messages",
+              "fieldName": "messages"
+            },
+            {
+              "name": "loadPreviousMessages",
+              "fieldName": "loadPreviousMessages"
+            },
+            {
+              "name": "filter",
+              "fieldName": "filter"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vc-messages",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcMessages",
+          "declaration": {
+            "name": "VcMessages",
+            "module": "src/VcMessages.js"
+          }
+        }
+      ]
+    }
+  ]
+}

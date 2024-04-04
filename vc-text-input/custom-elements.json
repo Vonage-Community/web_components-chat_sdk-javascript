@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcTextInput",
+          "declaration": {
+            "name": "VcTextInput",
+            "module": "./src/VcTextInput.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "vc-text-input.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vc-text-input",
+          "declaration": {
+            "name": "VcTextInput",
+            "module": "/src/VcTextInput.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/VcTextInput.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VcTextInput",
+          "members": [
+            {
+              "kind": "method",
+              "name": "__handleKeypress",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "__handleKeyup",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "__handleClickEvent"
+            },
+            {
+              "kind": "field",
+              "name": "client",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "privacy": "public",
+              "attribute": "client"
+            },
+            {
+              "kind": "field",
+              "name": "myMember",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "conversationId",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "conversationId"
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "message"
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Enter message\"",
+              "privacy": "public",
+              "attribute": "placeholder"
+            },
+            {
+              "kind": "field",
+              "name": "buttonText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"send\"",
+              "privacy": "public",
+              "attribute": "buttonText"
+            },
+            {
+              "kind": "field",
+              "name": "typingTimeout",
+              "type": {
+                "text": "number"
+              },
+              "default": "500",
+              "privacy": "public",
+              "attribute": "typingTimeout"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "client",
+              "fieldName": "client"
+            },
+            {
+              "name": "conversationId",
+              "fieldName": "conversationId"
+            },
+            {
+              "name": "message",
+              "fieldName": "message"
+            },
+            {
+              "name": "placeholder",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "buttonText",
+              "fieldName": "buttonText"
+            },
+            {
+              "name": "typingTimeout",
+              "fieldName": "typingTimeout"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vc-text-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcTextInput",
+          "declaration": {
+            "name": "VcTextInput",
+            "module": "src/VcTextInput.js"
+          }
+        }
+      ]
+    }
+  ]
+}

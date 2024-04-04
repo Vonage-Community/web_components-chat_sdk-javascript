@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcTypingIndicator",
+          "declaration": {
+            "name": "VcTypingIndicator",
+            "module": "./src/VcTypingIndicator.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "vc-typing-indicator.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vc-typing-indicator",
+          "declaration": {
+            "name": "VcTypingIndicator",
+            "module": "/src/VcTypingIndicator.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/VcTypingIndicator.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VcTypingIndicator",
+          "members": [
+            {
+              "kind": "method",
+              "name": "__handleConversationEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "client",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "privacy": "public",
+              "attribute": "client"
+            },
+            {
+              "kind": "field",
+              "name": "conversationId",
+              "default": "undefined",
+              "privacy": "public",
+              "attribute": "conversationId"
+            },
+            {
+              "kind": "field",
+              "name": "typingStatus",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "typingStatus"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "client",
+              "fieldName": "client"
+            },
+            {
+              "name": "conversationId",
+              "fieldName": "conversationId"
+            },
+            {
+              "name": "typingStatus",
+              "fieldName": "typingStatus"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vc-typing-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcTypingIndicator",
+          "declaration": {
+            "name": "VcTypingIndicator",
+            "module": "src/VcTypingIndicator.js"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcMembers",
+          "declaration": {
+            "name": "VcMembers",
+            "module": "./src/VcMembers.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "vc-members.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "vc-members",
+          "declaration": {
+            "name": "VcMembers",
+            "module": "/src/VcMembers.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/VcMembers.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VcMembers",
+          "members": [
+            {
+              "kind": "method",
+              "name": "__handleConversationEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "client",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "privacy": "public",
+              "attribute": "client"
+            },
+            {
+              "kind": "field",
+              "name": "conversationId",
+              "default": "undefined",
+              "privacy": "public",
+              "attribute": "conversationId"
+            },
+            {
+              "kind": "field",
+              "name": "members",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "members"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "client",
+              "fieldName": "client"
+            },
+            {
+              "name": "conversationId",
+              "fieldName": "conversationId"
+            },
+            {
+              "name": "members",
+              "fieldName": "members"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vc-members",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VcMembers",
+          "declaration": {
+            "name": "VcMembers",
+            "module": "src/VcMembers.js"
+          }
+        }
+      ]
+    }
+  ]
+}

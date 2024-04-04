@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+
+    /* vc-messages {
+      height: 300px;
+    }
+
+    vc-messages::part(message) {
+      padding: 15px;
+      margin: 5px;
+    }
+
+    vc-messages::part(message mine) {
+      text-align: right;
+    }
+
+    vc-messages::part(message-text) {
+      border-radius: 6px;
+        background-color: #f0f0f0;
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 6px 6px 6px 0;
+        font-size: 1.4rem;
+    }
+
+    vc-messages::part(message-text mine) {
+      background-color: #e0e0ff;
+      border-radius: 6px 6px 0px 6px;
+    }
+
+    vc-messages::part(username) {
+      font-size: 1.2rem;
+    }
+
+    vc-messages::part(username mine) {
+      text-align: right;
+      color: black;
+    } */
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@vonage/client-sdk@latest/dist/vonageClientSDK.min.js"></script>
+
+</head>
+<body>
+  <!-- <vc-messages loadPreviousMessages="all" filter='["message"]'></vc-messages> -->
+  <!-- <vc-messages loadPreviousMessages="ALL"></vc-messages> -->
+  <vc-messages></vc-messages>
+
+  <script type="module">
+    import '../vc-messages.js';
+    const JWT = '';
+    const CONVERSATION_ID = '';
+    const messagesEl = document.querySelector('vc-messages');
+    const client = new vonageClientSDK.VonageClient();
+    try {
+      await client.createSession(JWT);
+      messagesEl.client = client;
+      messagesEl.conversationId = CONVERSATION_ID;
+      // messagesEl.filter = ['message'];
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  </script>
+</body>
+</html>
