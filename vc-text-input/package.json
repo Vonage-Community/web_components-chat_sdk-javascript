@@ -2,7 +2,7 @@
   "name": "@vonage/vc-text-input",
   "description": "vc-text-input Web Component to be used with the Vonage Client JS SDK following open-wc recommendations",
   "license": "MIT",
-  "author": "vc-text-input",
+  "author": "Vonage",
   "version": "2.0.0",
   "type": "module",
   "main": "index.js",
