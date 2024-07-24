@@ -11,6 +11,9 @@ export class VcMessages extends LitElement {
       height: 100%;
       overflow-y: auto;
     }
+    img {
+      width: 100%;
+    }
   `;
 
   static properties = {
@@ -102,6 +105,17 @@ export class VcMessages extends LitElement {
           message =  e.body.text;
           this.messages = [...this.messages, { sender, message }];
           break;
+        case 'message:image':
+          sender = {
+            displayName: e.from.user.displayName,
+            memberId: e.from.memberId,
+            userName: e.from.user.name,
+            userId: e.from.user.id,
+            kind: e.kind
+          };
+          message = e.body.imageUrl;
+          this.messages = [...this.messages, { sender, message }];
+          break;
       }
       this.feedAtBottom = this.isFeedAtBottom();
     }
@@ -177,11 +191,11 @@ export class VcMessages extends LitElement {
           messageObject => html`
             ${this.myId === messageObject.sender.memberId
               ? html`<div class="message mine" part="message mine">
-                <div class="message-text mine" part="message-text mine">${messageObject.message.replace(/</g, '&lt;')}</div>
+                ${messageObject.sender.kind === 'message:image' ? html`<div class="message-image mine" part="message-image mine"><img class="image mine" part="image mine" src="${messageObject.message}" /></div>`: html`<div class="message-text mine" part="message-text mine">${messageObject.message.replace(/</g, '&lt;')}</div>`}
                 ${messageObject.sender.kind !== 'system' ? html`<div class="username mine" part="username mine">${messageObject.sender.displayName.replace(/</g, '&lt;')}</div>` : ''}
               </div>`
               : html`<div class="message" part="message">
-                  <div class="message-text" part="message-text">${messageObject.message.replace(/</g, '&lt;')}</div>
+                  ${messageObject.sender.kind === 'message:image' ? html`<div class="message-image" part="message-image"><img class="image" part="image" src="${messageObject.message}" /></div>` : html`<div class="message-text" part="message-text">${messageObject.message.replace(/</g, '&lt;')}</div>`}
                   ${messageObject.sender.kind !== 'system' ? html`<div class="username" part="username">${messageObject.sender.displayName.replace(/</g, '&lt;')}</div>` : ''}
                 </div>`}
           `
