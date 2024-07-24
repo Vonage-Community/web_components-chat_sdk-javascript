@@ -57,9 +57,13 @@ Here are two diagram that labels the parts of the component as well as the defau
 
 To style the overall message, the part is "message". To style the application user's message, the part to target is "message mine".
 
-![Diagram labeling the parts of each message of the component](vc-messages-style-diagram-2.jpg "Diagram labeling the parts of each message of the component")
+![Diagram labeling the parts of each message-text of the component](vc-messages-style-diagram-2.jpg "Diagram labeling the parts of each message-text of the component")
 
-Each message is made up of the text (part is "message-text"), and their name (part is "username"). To specifically style the application user's message text, target "message-text mine" and for their name, the target would be "username mine".
+![Diagram labeling the parts of each message-image of the component](vc-messages-style-diagram-3.jpg "Diagram labeling the parts of each message-image of the component")
+
+Each message is made up of the text (part is "message-text") or image (part is "message-image"), and their name (part is "username"). To specifically style the application user's message text, target "message-text mine" or for message image, target "message-image mine". For their name, the target would be "username mine".
+
+To style the image itself, the part is "image". To target the user's image, the part is "image mine".
 
 To get the styling shown in the image:
 
@@ -87,6 +91,21 @@ vc-messages::part(message-text) {
 }
 
 vc-messages::part(message-text mine) {
+  background-color: #e0e0ff;
+  border-radius: 6px 6px 0px 6px;
+}
+
+vc-messages::part(message-image) {
+  background-color: #f0f0f0;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 6px 6px 6px 0;
+  font-size: 1.4rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+vc-messages::part(message-image mine) {
   background-color: #e0e0ff;
   border-radius: 6px 6px 0px 6px;
 }
@@ -130,6 +149,21 @@ vc-messages::part(message-text mine) {
   color: white;
   font-style: italic;
   border-radius: 20px 20px 0 20px;
+}
+
+vc-messages::part(message-image) {
+  background-color: yellow;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 6px 6px 6px 0;
+  font-size: 1.4rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+vc-messages::part(message-image mine) {
+  background-color: purple;
+  border-radius: 6px 6px 0px 6px;
 }
 
 vc-messages::part(username) {
