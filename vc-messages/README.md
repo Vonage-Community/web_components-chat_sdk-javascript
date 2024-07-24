@@ -63,6 +63,8 @@ To style the overall message, the part is "message". To style the application us
 
 Each message is made up of the text (part is "message-text") or image (part is "message-image"), and their name (part is "username"). To specifically style the application user's message text, target "message-text mine" or for message image, target "message-image mine". For their name, the target would be "username mine".
 
+To style the image itself, the part is "image". To target the user's image, the part is "image mine".
+
 To get the styling shown in the image:
 
 ```css
