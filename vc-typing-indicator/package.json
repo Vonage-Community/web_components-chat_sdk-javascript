@@ -3,7 +3,7 @@
   "description": "vc-typing-indicator Web Component to be used with the Vonage Client JS SDK following open-wc recommendations",
   "license": "MIT",
   "author": "Vonage",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
