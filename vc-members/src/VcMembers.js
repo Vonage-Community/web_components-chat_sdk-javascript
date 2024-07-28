@@ -48,8 +48,12 @@ export class VcMembers extends LitElement {
   }
 
   async updated(changedProperties) {
-    if(changedProperties.get("client")){
+    if(changedProperties.get("client") || changedProperties.get("conversationId")){
+      console.log("changed properties: ",changedProperties);
       try {
+        if (changedProperties.get("conversationId")){
+          this.members = [];
+        }
         const { members, nextCursor, previousCursor } =
           await this.client.getConversationMembers(this.conversationId, {
             order: 'asc',

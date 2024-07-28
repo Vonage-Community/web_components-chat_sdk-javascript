@@ -124,7 +124,10 @@ export class VcMessages extends LitElement {
   async updated(changedProperties) {
     try {
       this.messageFeed = this.shadowRoot.querySelector('#messages-container');
-      if (changedProperties.get('client')) {
+      if (changedProperties.get('client') || changedProperties.get("conversationId")) {
+        if (changedProperties.get("conversationId")){
+          this.messages = [];
+        }
         const myMember = await this.client.getConversationMember(this.conversationId, 'me');
         this.myId = myMember.id;
         this.client.on('conversationEvent', (event) => {

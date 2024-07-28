@@ -45,7 +45,7 @@ export class VcTypingIndicator extends LitElement {
   }
 
   async updated(changedProperties) {
-    if (changedProperties.get('client')) {
+    if (changedProperties.get('client') || changedProperties.get("conversationId")) {
       try {
         const myMember = await this.client.getConversationMember(this.conversationId, 'me');
         this.myId = myMember.id; 

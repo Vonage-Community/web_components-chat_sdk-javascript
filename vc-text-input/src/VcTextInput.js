@@ -77,7 +77,7 @@ export class VcTextInput extends LitElement {
   }
 
   async updated(changedProperties) {
-    if (changedProperties.get('client')) {
+    if (changedProperties.get('client') || changedProperties.get("conversationId")) {
       try {
         const myConvMember = await this.client.getConversationMember(this.conversationId, 'me');
         this.myMember = { id: myConvMember.id, username: myConvMember.user.name, displayName: myConvMember.user.displayName, userId: myConvMember.user.id};  
