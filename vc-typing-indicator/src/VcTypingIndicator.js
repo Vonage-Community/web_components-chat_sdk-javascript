@@ -19,6 +19,7 @@ export class VcTypingIndicator extends LitElement {
     this.client = {};
     this.conversationId = undefined;
     this.typingStatus = '';
+    this.eventListener;
   }
 
   connectedCallback() {
@@ -47,9 +48,12 @@ export class VcTypingIndicator extends LitElement {
   async updated(changedProperties) {
     if (changedProperties.get('client') || changedProperties.get("conversationId")) {
       try {
+        if (changedProperties.get("conversationId")){
+          this.client.off('conversationEvent', this.eventListener);
+        }
         const myMember = await this.client.getConversationMember(this.conversationId, 'me');
         this.myId = myMember.id; 
-        this.client.on('conversationEvent', (event) => {
+        this.eventListener = this.client.on('conversationEvent', (event) => {
           if (event.kind === "ephemeral"){
             this.__handleConversationEvent(event);
           }

@@ -25,6 +25,7 @@ export class VcMembers extends LitElement {
     this.client = {};
     this.conversationId = undefined;
     this.members = [];
+    this.eventListener;
   }
 
   connectedCallback() {
@@ -49,10 +50,10 @@ export class VcMembers extends LitElement {
 
   async updated(changedProperties) {
     if(changedProperties.get("client") || changedProperties.get("conversationId")){
-      console.log("changed properties: ",changedProperties);
       try {
         if (changedProperties.get("conversationId")){
           this.members = [];
+          this.client.off('conversationEvent', this.eventListener);
         }
         const { members, nextCursor, previousCursor } =
           await this.client.getConversationMembers(this.conversationId, {
@@ -65,7 +66,7 @@ export class VcMembers extends LitElement {
           }
         })
 
-        this.client.on('conversationEvent', (event) => {
+        this.eventListener = this.client.on('conversationEvent', (event) => {
           this.__handleConversationEvent(event);
         });
       }
